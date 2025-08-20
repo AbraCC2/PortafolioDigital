@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mis Videos (1–7) | 1080×1920</title>
+  <meta name="description" content="Landing para alojar videos verticales (1080x1920) con logo y botón de contacto por WhatsApp." />
+  <style>
+    :root{
+      --bg:#0b0b10;          /* Fondo oscuro elegante */
+      --card:#12121a;        /* Tarjetas */
+      --muted:#a8b3cf;       /* Texto secundario */
+      --text:#e8ecf3;        /* Texto principal */
+      --brand:#6ee7ff;       /* Acento */
+      --brand-strong:#22d3ee;
+      --ring: rgba(110,231,255,.4); /* Glow */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 0%, #111827 10%, #0b0b10 60%), var(--bg);
+      color:var(--text);
+    }
+    /* Header */
+    .header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px); background: rgba(11,11,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+    .header-inner{max-width:1200px; margin:auto; padding:16px 20px; display:flex; align-items:center; justify-content:space-between}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--text)}
+    .brand img{height:42px; width:auto; display:block; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,.25)}
+    .brand span{font-weight:700; letter-spacing:.4px}
+
+    .cta{appearance:none; border:none; background:linear-gradient(135deg,var(--brand),var(--brand-strong)); color:#0b0b10; font-weight:800; padding:12px 16px; border-radius:14px; cursor:pointer; text-decoration:none; outline:0; box-shadow:0 10px 30px var(--ring); transition: transform .08s ease, box-shadow .2s ease;}
+    .cta:hover{transform:translateY(-1px); box-shadow:0 14px 38px var(--ring)}
+    .cta:active{transform:translateY(0)}
+
+    /* Main */
+    .main{max-width:1200px; margin:32px auto; padding:0 20px}
+    .intro{display:flex; align-items:end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:16px}
+    h1{font-size:clamp(24px,3.6vw,36px); margin:0}
+    .sub{color:var(--muted); font-size:14px}
+
+    /* Video grid */
+    .grid{display:grid; grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.06); border-radius:18px; overflow:hidden; box-shadow: 0 6px 30px rgba(0,0,0,.25)}
+    .frame{position:relative; width:100%; aspect-ratio: 9 / 16; background: #0d1117; display:grid; place-items:center}
+    /* Mantener proporción 1080x1920 (9:16). El video original puede ser 1080x1920 y aquí se escala responsivamente */
+    .frame video{width:100%; height:100%; object-fit:cover}
+    .badge{position:absolute; top:8px; left:8px; font-size:12px; background:rgba(0,0,0,.55); color:#fff; padding:6px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.1)}
+    .meta{display:flex; align-items:center; justify-content:space-between; padding:10px 12px}
+    .meta b{font-size:14px}
+    .meta a{font-size:13px; text-decoration:none; color:var(--brand)}
+
+    /* Footer */
+    footer{max-width:1200px; margin:40px auto 60px; padding:0 20px; color:var(--muted); font-size:13px; text-align:center}
+
+    /* Small helper: full-width single column on very small screens */
+    @media (max-width:420px){
+      .brand span{display:none} /* mostrar solo el logo cuando el espacio es mínimo */
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER: Logo a la izquierda, botón CONTACTO a la derecha -->
+  <header class="header">
+    <div class="header-inner">
+      <!-- Reemplaza src="logo-a.png" por la ruta real de tu logo con la letra "A" que ya cargaste -->
+      <a class="brand" href="#" aria-label="Inicio">
+        <img src="logo-a.png" alt="Logo A" />
+        <span>Mi Biblioteca de Videos</span>
+      </a>
+
+      <!-- Botón que abre chat de WhatsApp al número dado (Cancún, MX +52) -->
+      <a class="cta" target="_blank" rel="noopener" href="https://wa.me/529821095773">CONTACTO</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="intro">
+      <h1>Videos 1080 × 1920 (1–7)</h1>
+      <p class="sub">Explora mis piezas en formato vertical (9:16). Haz clic para reproducir.</p>
+    </div>
+
+    <section class="grid" aria-label="Galería de videos 1 al 7">
+      <!-- TARJETA 1 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#1</span>
+          <!-- Reemplaza videos/1.mp4 por tu archivo real. El tamaño original recomendado es 1080x1920 -->
+          <video controls preload="metadata" poster="posters/1.jpg">
+            <source src="videos/1.mp4" type="video/mp4" />
+            Tu navegador no soporta video HTML5.
+          </video>
+        </div>
+        <div class="meta"><b>Video 1</b><a href="videos/1.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 2 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#2</span>
+          <video controls preload="metadata" poster="posters/2.jpg">
+            <source src="videos/2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 2</b><a href="videos/2.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 3 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#3</span>
+          <video controls preload="metadata" poster="posters/3.jpg">
+            <source src="videos/3.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 3</b><a href="videos/3.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 4 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#4</span>
+          <video controls preload="metadata" poster="posters/4.jpg">
+            <source src="videos/4.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 4</b><a href="videos/4.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 5 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#5</span>
+          <video controls preload="metadata" poster="posters/5.jpg">
+            <source src="videos/5.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 5</b><a href="videos/5.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 6 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#6</span>
+          <video controls preload="metadata" poster="posters/6.jpg">
+            <source src="videos/6.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 6</b><a href="videos/6.mp4" download>Descargar</a></div>
+      </article>
+
+      <!-- TARJETA 7 -->
+      <article class="card">
+        <div class="frame">
+          <span class="badge">#7</span>
+          <video controls preload="metadata" poster="posters/7.jpg">
+            <source src="videos/7.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="meta"><b>Video 7</b><a href="videos/7.mp4" download>Descargar</a></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> — Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Año dinámico en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mejor UX móvil: iniciar/pausar al tocar el video sin que el navegador muestre controles si el usuario lo oculta
+    document.querySelectorAll('.frame video').forEach(v => {
+      v.addEventListener('click', () => {
+        if (v.paused) v.play(); else v.pause();
+      });
+    });
+  </script>
+</body>
+</html>
