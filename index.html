@@ -21,12 +21,7 @@ body{
   background: radial-gradient(1200px 600px at 10% 0%, #111827 10%, #0b0b10 60%), var(--bg);
   color:var(--text);
   overflow-x:hidden;
-  cursor:auto; /* Se mantiene visible por defecto */
-}
-
-/* SOLO ocultamos el cursor en pantallas grandes */
-@media (min-width: 769px) {
-  body { cursor: none; }
+  cursor:auto; /* Cursor normal siempre */
 }
 
 /* HEADER */
@@ -107,35 +102,6 @@ body{
 .meta a{font-size:13px; text-decoration:none; color:var(--text)}
 footer{max-width:1200px; margin:40px auto 60px; padding:0 20px; color:var(--muted); font-size:13px; text-align:center}
 
-/* CURSOR PERSONALIZADO SOLO EN ESCRITORIO */
-.cursor {
-  display: none;
-}
-@media (min-width: 769px) {
-  .cursor {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 25px;
-    height: 25px;
-    background: url('A.PNG') no-repeat center center;
-    background-size: contain;
-    pointer-events: none;
-    transform: translate(-50%, -50%) rotate(0deg);
-    z-index: 1000;
-    transition: transform 0.05s linear;
-    animation: glowPulse 1.5s infinite alternate;
-  }
-}
-
-/* EFECTO BRILLO CURSOR */
-@keyframes glowPulse {
-  0% { opacity: 0.6; filter: drop-shadow(0 0 4px #fff); }
-  50% { opacity: 1; filter: drop-shadow(0 0 8px #fff); }
-  100% { opacity: 0.8; filter: drop-shadow(0 0 4px #fff); }
-}
-
 /* RESPONSIVIDAD */
 @media (max-width: 768px) {
   .header-inner{flex-direction:column; gap:10px;}
@@ -146,7 +112,7 @@ footer{max-width:1200px; margin:40px auto 60px; padding:0 20px; color:var(--mute
   .frame video {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Para que las miniaturas siempre aparezcan */
+    object-fit: contain; /* Asegura que las miniaturas siempre aparezcan */
   }
 }
 @media (max-width: 480px) {
@@ -207,17 +173,7 @@ footer{max-width:1200px; margin:40px auto 60px; padding:0 20px; color:var(--mute
 
 <footer>Hecho con ❤️ por Abraham</footer>
 
-<div class="cursor" id="cursor"></div>
-
 <script>
-const cursor = document.getElementById('cursor');
-if (window.innerWidth > 768) {
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-}
-
 // Animación de logo
 const logo = document.getElementById('logo-img');
 logo.addEventListener('click', () => {
@@ -233,6 +189,8 @@ logo.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
+
 
 
 
